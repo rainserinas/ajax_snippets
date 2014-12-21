@@ -1,0 +1,32 @@
+package PackageOne;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import javax.swing.JOptionPane;
+
+import com.mysql.jdbc.PreparedStatement;
+
+public class DBconnection {
+
+	Connection con;
+
+	
+	public DBconnection(){
+		
+		try {
+			String driver1 = "sun.jdbc.odbc.JdbcOdbcDriver";
+			Class.forName(driver1);
+			
+			String db1 = "jdbc:odbc:Database1";
+			con = DriverManager.getConnection("jdbc:odbc:payrolldb");
+			
+
+		} catch (Exception exp) {
+			JOptionPane.showMessageDialog(null, exp);
+		}
+		
+	}
+}
