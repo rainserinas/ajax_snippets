@@ -19,11 +19,8 @@ th {text-align: left;}
 
 
 <?php
- echo $_GET['city'];
- 
- echo $_GET['date'];
- 
-/**
+
+
 	$q = intval($_GET['test']);
 	
 	//connection
@@ -67,17 +64,11 @@ th {text-align: left;}
 		
 		echo "</table>";
 		mysqli_close($connection);
-
-		
-		echo 'hello'; **/
-		?>
-
-
-
-	
-
+?>
 
 </body>
 </html>
+
+
 
 
