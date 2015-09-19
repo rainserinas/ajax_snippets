@@ -4,5 +4,5 @@
 -- git commit -m 'Your Message on committing'
 -- git push -- force https://github.com/rainserinas/{{your chosen repo}}.git
 
--- (For Bit Bucket. Org) git clone https://raineirserinas@bitbucket.org/raineirserinas/first-repository.git
+-- (For Bit Bucket) git clone https://raineirserinas@bitbucket.org/raineirserinas/first-repository.git
 
