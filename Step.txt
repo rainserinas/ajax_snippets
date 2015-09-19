@@ -1,8 +1,7 @@
--- Go to git local repository
+-- Go to git bit bucket local repository
 -- git init
--- git add --all
+-- git status
+-- git add {{File name or folder to add}}
 -- git commit -m 'Your Message on committing'
--- git push -- force https://github.com/rainserinas/{{your chosen repo}}.git
-
--- (For Bit Bucket) git clone https://raineirserinas@bitbucket.org/raineirserinas/first-repository.git
+-- git push origin master
 
