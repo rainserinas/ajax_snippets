@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Location Checker</title>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    </head>
+    
+
+
+
+<body>
+
+  <center><h2>Location Checker version 1.0</h2></center>
+
+
+
+        <input type="text" id="my-address" style="width: 700px;">&nbsp&nbsp<input style="width: 300px;" type="text" id="longlat" />
+
+        <br /><br />
+
+        <button id="getCords" onClick="codeAddress();">Get Result</button>
+
+        <br /><br />
+
+        <input type="text" id="long" placeholder="Longtitude"/>   <input type="text" id="lat" placeholder="Latitude"/> <input style="width: 700px;" type="text" id="loc" placeholder="Location"/> 
+
+        <br /><br />
+        
+
+        <button onclick="getLoc()">Go</button>
+
+        <br /><br />
+        
+
+            <h2>Find Distance between to set of Longitude and Latitude</h2>
+
+                <label>LongLat 1:</label> <input type="text" id="long1" placeholder="Longitude"/> <input type="text" id="lat1" placeholder="Latitude" />
+
+                <label>LongLat 2:</label> <input type="text" id="long2" placeholder="Longitude"/> <input type="text" id="lat2" placeholder="Latitude" />
+
+                <input type="text" id="totalkm" placeholder="Distance in KM" />
+
+                <button onclick="getDistanceFromLatLonInKm($('#lat1').val(),$('#long1').val(),$('#lat2').val(),$('#long2').val())">Calculate</button>
+        
+        <br /><br />
+        
+        <center><div id="googleMap" style="width:800px;height:380px;"></div></center>
+
+   
+
+
+
+</body>
+
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+    <script type="text/javascript" src="js/getlonglat.js"></script>      
+
+
+
+
+</html>
+
