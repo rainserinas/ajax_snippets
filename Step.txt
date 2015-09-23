@@ -1,0 +1,7 @@
+-- Go to git bit bucket local repository
+-- git init
+-- git status
+-- git add {{File name or folder to add}}
+-- git commit -m 'Your Message on committing'
+-- git push origin master
+

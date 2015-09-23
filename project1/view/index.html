@@ -1,0 +1,92 @@
+<html ng-app="loginApp">
+<head>
+
+    <title>Please Log in</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+    <script type="text/javascript" src="../js/login.js"></script>
+
+
+</head>
+
+
+    <body ng-controller="myCtrl">
+        
+
+        <div class="row">
+          <center><div style="width: 400px; margin-top: 80px;" id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+                <div class="panel panel-primary" >
+                    <div class="panel-heading">
+                        <div class="panel-title">Log In</div>
+
+                    </div>     
+
+                    <div class="panel-body">
+
+                        <div ng-show="myVar" id="login_success" class="alert alert-success">
+                            <strong>Login Successful!</strong>
+                        </div>
+
+                        <div ng-show="fail" id="login_failed" class="alert alert-danger">
+                            <strong>Invalid Username/Password!</strong>
+                        </div>
+                   
+
+                                <div class="input-group">
+                                            <span class="input-group-addon">Username:</span>
+                                            <input ng-model="username" id="login-username" type="text" class="form-control" name="username" value="" placeholder="">                                        
+                                </div>
+                         
+                                    <br />
+
+                                <div class="input-group">
+                                    <span class="input-group-addon">Password:</span>
+                                    <input ng-model="password" id="login-password" type="password" class="form-control" name="password" placeholder="">
+                                </div>
+                                
+                                <div class="input-group pull-center">
+                                    <div class="checkbox">
+                                        <label>
+                                        <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
+                                        </label>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group pull-right">
+                                    <div class="col-sm-12 controls pull-right">
+                                        <input ng-click="login()" type="button" id="login" value="Login" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-12 control">
+                                        <div style="border-top: 1px solid#888; font-size:85%" ></div>
+                                    </div>
+                                </div>
+
+
+
+
+                    </div>                     
+                </div>  
+            </div></center>
+        </div><!--.row -->
+
+
+
+
+
+
+
+    </body>
+</html>
