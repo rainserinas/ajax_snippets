@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sectionApp">
+<head>
+  <title>Sections</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="../js/section.js"></script>
+</head>
+
+<body ng-controller="sectionctrl">
+
+      <nav class="navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Sections</a>
+          </div>
+        </div>
+      </nav>
+        
+      <div class="container">
+        
+        <br />
+        <br />
+
+          <input class="form-control pull-right" type="text" ng-model="search" style="width:250px;" placeholder="Search here...">
+            
+            <br />
+
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Section</th>
+                    <th>Subject</th>
+                    <th>Professor Name</th>
+                    <th>Description</th>
+                    <th>Score</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr ng-repeat="datatable in tabledata | filter: search">
+                    <td>{{datatable.section}}</td>
+                    <td>{{datatable.subject}}</td>
+                    <td>{{datatable.prof_name}}</td>
+                    <td>{{datatable.description}}</td>
+                    <td>{{datatable.score}}</td>
+                  </tr>
+                </tbody>
+              </table>
+
+
+
+
+      </div>
+
+</body>
+</html>

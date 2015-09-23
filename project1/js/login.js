@@ -11,6 +11,7 @@ app.controller('myCtrl', function($scope,$interval) {
 				$scope.myVar = !$scope.myVar;
 				var interval = $interval(function() {
 						$scope.myVar = false;
+						window.location = "section.html";
 		        }, 2000);
 		}else{
 
