@@ -6,26 +6,16 @@ class Dat extends CI_Model{
 		parent::__construct();
 	}
 
-        public function authenticate($table,$where){
 
+        public function selectData($table,$where){
 
-           $query = $this->db->query("SELECT * FROM $table WHERE $where");
-
-           if($query->num_rows() > 0){
-                return 1;
-           }else{
-                return 0;
-           }
-
-
-        }
-
-
-        public function selectData($table){
-
-            $select = $this->db->get($table);
-            return $select->result_array();
-
+            if($where == ""){
+                $select = $this->db->get($table);
+                return $select->result_array();
+            }else{
+                $select = $this->db->query("SELECT * FROM $table WHERE $where");
+                return $select->result_array();
+            }
         }
 
 

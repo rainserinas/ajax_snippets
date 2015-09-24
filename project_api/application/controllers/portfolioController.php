@@ -14,10 +14,19 @@ class portfolioController extends CI_Controller {
         $password = $this->input->get('password');
         $table    = "tbl_useracct";
         $where    = "username = '$username' and password = '$password'";
-
-        $auth     = $this->dat->authenticate($table,$where);
-
-        echo $auth;
+        $auth     = $this->dat->selectData($table,$where);
+        
+        if(is_array($auth)){
+            foreach ($auth as $key => $value) {
+                $authdata  = (object)$value;
+                $auth_array[] = array(
+                    "id"=>$authdata->id
+                );
+            }
+            echo json_encode($auth_array);
+        }else{
+            echo "";
+        }
 
 
     }
@@ -73,9 +82,7 @@ class portfolioController extends CI_Controller {
           'checkbox_7'=>$check7  
         );
 
-        $table = "portfolio_tbl";
-
-
+        $table  = "portfolio_tbl";
         $result = $this->dat->insertData($table,$data);
 
         echo $result;
@@ -88,14 +95,11 @@ class portfolioController extends CI_Controller {
 
         $subject = $this->input->post('subject');
         $id      = $this->input->post('id');
-
-        $data = array(
+        $data    = array(
             'subject'=>$subject
         );
-
-        $table = "portfolio_tbl";
-
-        $result = $this->dat->updateData($table,$data,$id);
+        $table   = "portfolio_tbl";
+        $result  = $this->dat->updateData($table,$data,$id);
 
         echo $result;
 
@@ -105,14 +109,60 @@ class portfolioController extends CI_Controller {
 
     public function delete_portfolio(){
 
-        $id      = $this->input->post('id');
-        $table = "portfolio_tbl";
-
+        $id     = $this->input->post('id');
+        $table  = "portfolio_tbl";
         $result = $this->dat->deleteData($table,$id);
 
         echo $result;
 
 
+
+    }
+
+    public function listSubject(){
+
+        $where      = $this->input->get('val');
+       
+        if($where != "All Section"){
+            $query      = "sec_desc = '$where'";
+        }else{
+            $query      = "";
+        }
+
+        $table      = "tbl_subj";
+        $resultSubject = $this->dat->selectData($table,$query);
+
+        foreach ($resultSubject as $key => $value) {
+            $subjectdata = (object)$value;
+            if($subjectdata != ""){
+                echo "<tr>";
+                echo "<td><span style='cursor:pointer;' onclick='listStudents(\"$subjectdata->stud_id\")'><font color='#45B4FF'>$subjectdata->subj_name<font></span></td>";
+                echo "<td>$subjectdata->categ</td>";
+                echo "</tr>";
+            }else{
+                echo "<tr rowspan='2'>";
+                echo "<td>No Results</td>";
+                echo "</tr>";
+            }
+        }
+        
+        
+    }
+
+    public function listStudents(){
+
+        $student_id    = $this->input->get('student_id');
+        $query         = "id = '$student_id'";
+        $table         = "tbl_useracct";
+        $resultStudent = $this->dat->selectData($table,$query);
+
+        foreach ($resultStudent as $key => $value) {
+            $studentdata = (object)$value;
+            echo "<tr>";
+            echo "<td>$studentdata->id</td>";
+            echo "<td>$studentdata->name</td>";
+            echo "</tr>";
+        }
 
     }
 
