@@ -1,0 +1,9 @@
+D:\Microsoft Visual Studio Workspace\Hotspot Processor\Hotspot Processor\bin\Debug\Hotspot Processor.exe.config
+D:\Microsoft Visual Studio Workspace\Hotspot Processor\Hotspot Processor\bin\Debug\Hotspot Processor.exe
+D:\Microsoft Visual Studio Workspace\Hotspot Processor\Hotspot Processor\bin\Debug\Hotspot Processor.pdb
+D:\Microsoft Visual Studio Workspace\Hotspot Processor\Hotspot Processor\obj\Debug\Hotspot Processor.csprojResolveAssemblyReference.cache
+D:\Microsoft Visual Studio Workspace\Hotspot Processor\Hotspot Processor\obj\Debug\Hotspot_Processor.FORM.Form1.resources
+D:\Microsoft Visual Studio Workspace\Hotspot Processor\Hotspot Processor\obj\Debug\Hotspot_Processor.Properties.Resources.resources
+D:\Microsoft Visual Studio Workspace\Hotspot Processor\Hotspot Processor\obj\Debug\Hotspot Processor.csproj.GenerateResource.Cache
+D:\Microsoft Visual Studio Workspace\Hotspot Processor\Hotspot Processor\obj\Debug\Hotspot Processor.exe
+D:\Microsoft Visual Studio Workspace\Hotspot Processor\Hotspot Processor\obj\Debug\Hotspot Processor.pdb
