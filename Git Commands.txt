@@ -1,0 +1,13 @@
+--check origin of repository
+git remote -v
+
+--add origin to repository
+git remote add origin https://github.com/user/repo.git
+
+--remove origin to repository
+git remote rm origin  https://github.com/user/repo.git
+
+--github user page commit and push
+git add --all
+git commit -m 'commit message'
+git push -u origin master
