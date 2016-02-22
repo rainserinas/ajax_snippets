@@ -1,0 +1,68 @@
+
+
+For any software project to be successful, you need to have a plan. There are certain steps you need to follow and mistakes to be avoided.
+
+This article is designed to give you those vital steps to help you deliver a successful software project.
+
+    
+1 . Gather requirements
+
+    This is the most important step of all. You need to find out exactly WHAT is required.
+    It's best if you members from all key parties involved into a room so you can find out all of the requirements for this new system.
+
+    When recording the requirements, I advise you follow the MoSCoW method.
+    It helps you prioritise and rank the requirements. MoSCoW stands for Must, Should, Could and Would.
+
+    M = Must have this requirement in this system. It would be a deal breaker not to have it.
+    S = Should have this requirement, but the project could succeed without it.
+    C = Could have this requirement if it doesn't affect anything else in the project.
+    W = Would like to have this requirement, but it is more of a nice to have. Not essential. Maybe later down the line. 
+
+    A great way to record the requirements is to have them in an excel document, numbered individually with columns for the name of the requirement, brief description, MoSCoW priority and delivery phase.
+    
+2 . Get agreement from the top
+
+    This is the second most important step, because if you don't have buy in from the people who are funding it or making the ultimate decisions, the project may never be completed and may not succeed.
+
+    Make sure the top level management are aware of your project. Let them know how much money the business will be saving or making if this project is successful. That way if any mid level managers jeopardise the success of the project, you can make the people at the top aware of this and they can put the pressure on them.
+    
+3 .Create a functional specification
+
+    This is where you translate the requirements into HOW the system is going to work. 
+
+    Write out a detailed document containing all aspects of the system.
+    Create process flows what the existing process is and what the new process will look like. Gliffy has a good some good flowchart software.
+
+    Create wireframes for the screens in the system. Don't think about styling here, just think about what needs to be on which screen. A good tool for creating wireframes is balsamiq.
+
+    Create UML diagrams for the objects in the system. This will help you work out what classes and interfaces will need to be built in the system for the project to succeed. Gliffy has a good tool for creating UML Diagrams.
+
+    Try and design interfaces for your objects to help with testing later down the line. Interfaces will help the project succeed as they set out a contract for your objects and this contract is designed around the requirements of the system.
+
+    Create a database diagram showing all of the tables, it's relationships and cardinality. This will help you and others visualise the database and see if anything is missing. Vertabelo has some good tools for designing databases.
+    
+4. Don't build anything without full sign off
+
+    You might be dying to get started writing some code, but you must wait until all of the key parties have signed off the requirements and functional specification.
+
+    It usually takes around 3 iterations of going through the requirements and specification, prioritising the requirements and making compromises before it becomes a stable set.
+
+    If you have followed the steps correctly so far, you will be on the right road to success.
+    
+5. Create a project plan
+
+    A successful project should have a project plan with key milestones and delivery dates. You will be able to see if you are on track, need to bring in extra resource or need to move delivery dates.
+    It is far better to have a view on this up front rather than leaving it until nearer the deadline and asking for more time then.
+    
+6. Build in smaller pieces
+
+    Whether one person is building it or a team of people are, divide the project into separate smaller sections. In priority order, focus on completing the smaller sections like the individual interfaces and classes which then make up the bigger pieces of the project. This helps you too avoid getting overwhelmed by the volume of work and also helps you to spread it out amongst team members. A good project planning tool is smartsheet.
+    
+7. Test, test and test again
+
+    Where possible, write unit tests for your code. You want to have a high test coverage and plans in place to test the other areas manually. Visual Studio has a good testing framework, but there are other good ones out there like NUnit and xunit
+
+    If you are building a web application, make sure you test it on lots of devices and browsers. A good browser testing tool is browserstack.
+
+    Use the hallway useability test to get 5 or 6 random people that pass by in the hallway and force them to try to use the code you just write. This will help you find most of your usability issues. 
+
