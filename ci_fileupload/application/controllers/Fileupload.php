@@ -13,10 +13,10 @@ class Fileupload extends CI_Controller
     public function do_upload()
     {
         $config['upload_path'] = './uploads/';
-        $config['allowed_types'] = 'gif|jpg|png';
+        $config['allowed_types'] = 'gif|jpg|png|txt|doc';
         $config['max_size'] = '10000';
-        $config['max_width'] = '1024';
-        $config['max_height'] = '768';
+//        $config['max_width'] = '1024';
+//        $config['max_height'] = '768';
 
         $this->load->library('upload', $config);
 
@@ -27,10 +27,10 @@ class Fileupload extends CI_Controller
         } else {
             $data = array('upload_data' => $this->upload->data());
 
-            //To get data of upload file
-            foreach ($data as $file) {
-                echo $file['file_name'];
-            }
+            $file = $this->upload->data();
+
+            //Get file name of upload
+            echo $file['file_name'];
 
             echo "Success!";
             //$this->load->view('upload_success', $data);
