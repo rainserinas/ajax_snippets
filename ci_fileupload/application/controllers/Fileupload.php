@@ -26,6 +26,12 @@ class Fileupload extends CI_Controller
             //$this->load->view('upload', $error);
         } else {
             $data = array('upload_data' => $this->upload->data());
+
+            //To get data of upload file
+            foreach ($data as $file) {
+                echo $file['file_name'];
+            }
+
             echo "Success!";
             //$this->load->view('upload_success', $data);
         }
@@ -34,5 +40,20 @@ class Fileupload extends CI_Controller
     public function load_html()
     {
         $this->load->view('login.html');
+    }
+
+    public function encrypt()
+    {
+        $this->load->library('encrypt');
+
+        $msg = 'raineir';
+        $key = 'super-secret-key';
+
+        $encrypted_string = $this->encrypt->encode($msg, $key);
+
+        echo $encrypted_string . "<br/>" . "<-- End";
+
+        $dec_string = $this->encrypt->decode($encrypted_string, $key);
+        echo $dec_string;
     }
 }
