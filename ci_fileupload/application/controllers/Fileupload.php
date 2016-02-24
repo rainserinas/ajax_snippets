@@ -30,4 +30,9 @@ class Fileupload extends CI_Controller
             //$this->load->view('upload_success', $data);
         }
     }
+
+    public function load_html()
+    {
+        $this->load->view('login.html');
+    }
 }
