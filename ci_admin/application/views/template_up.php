@@ -141,7 +141,7 @@
                     </li>
                     <li class="divider"></li>
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        <a href="http://127.0.0.1/ci_admin/admin/logout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                     </li>
                 </ul>
             </li>
@@ -156,16 +156,19 @@
                     <a href="javascript:;" data-toggle="collapse" data-target="#demo"> Pagel list <i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="demo" class="collapse">
                         <li>
-                            <a href="#">Home</a>
+                            <a href="<?php echo base_url('admin'); ?>">Home</a>
                         </li>
                         <li>
-                            <a href="#">About Us</a>
+                            <a href="<?php echo base_url('admin/about'); ?>">About Us</a>
                         </li>
                         <li>
-                            <a href="#">Products and Services</a>
+                            <a href="<?php echo base_url('admin/pas'); ?>">Products and Services</a>
                         </li>
                         <li>
-                            <a href="#">Careers</a>
+                            <a href="<?php echo base_url('admin/careers'); ?>">Careers</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('admin/clients'); ?>">Clients</a>
                         </li>
                         <li>
                             <a href="#">Contact Us</a>

@@ -1,7 +1,7 @@
 <div class="container-fluid">
 
 
-    <form action="http://127.0.0.1/ci_admin/admin/do_upload" enctype="multipart/form-data" method="post"
+    <form action="http://127.0.0.1/ci_admin/admin/home_upload" enctype="multipart/form-data" method="post"
           accept-charset="utf-8">
 
         <label>Heading Image:</label>

@@ -9,9 +9,9 @@ class Dat extends CI_Model
     created by your name
     created at 27-02-16.
     */
-    public function getAll()
+    public function getAll($table)
     {
-        return $this->db->get('home_tbl')->result();
+        return $this->db->get($table)->result_array();
     }
 
     /*
@@ -65,10 +65,10 @@ class Dat extends CI_Model
     created at 27-02-16.
     */
 
-    public function getDataById($id)
+    public function getDataById($id, $table)
     {
         $this->db->where('id', $id);
-        return $this->db->get('home_tbl')->result();
+        return $this->db->get($table)->result();
     }
 
     /*
@@ -78,11 +78,17 @@ class Dat extends CI_Model
     created at 27-02-16.
     */
 
-    public function update($id, $data)
+    public function update($id, $data, $table)
     {
         $this->db->where('id', $id);
-        $this->db->update('home_tbl', $data);
+        $this->db->update($table, $data);
         return true;
+    }
+
+    public function select_where($table,$data)
+    {
+        $query = $this->db->get_where($table,$data);
+        return $query->result_array();
     }
 
 }
