@@ -1,0 +1,91 @@
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#news_one_title {
+    z-index: 100;
+    position: absolute;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    left: 20px;
+    top: 20px;
+}
+
+#news_one_text {
+    z-index: 100;
+    position: absolute;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    left: 20px;
+    top: 40px;
+    word-wrap: break-word;
+}
+
+#news_two_title {
+    z-index: 100;
+    position: absolute;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    left: 20px;
+    top: 160px;
+}
+
+#news_two_text {
+    z-index: 100;
+    position: absolute;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    left: 20px;
+    top: 180px;
+    word-wrap: break-word;
+}
+
+#news_three_title {
+    z-index: 100;
+    position: absolute;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    left: 20px;
+    top: 290px;
+}
+
+#news_three_text {
+    z-index: 100;
+    position: absolute;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    left: 20px;
+    top: 310px;
+    word-wrap: break-word;
+}
+
+#about_title {
+    font-weight: bold;
+    font-size: 45px;
+}
+
+#pas-div {
+    text-align: center;
+    background-image: url('http://127.0.0.1/ci_admin/uploads/products and services bg.png');
+}
+
+.img-responsive {
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border-color: white;
+    background-color: white;
+    color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 6.3em;
+    display: inline-block;
+}

@@ -7,7 +7,12 @@ class main extends CI_Controller
 
     public function index()
     {
-        $this->load->view('home.html');
+        $this->load->view('home');
+    }
+
+    public function check_view()
+    {
+        $this->load->view('check');
     }
 
 }

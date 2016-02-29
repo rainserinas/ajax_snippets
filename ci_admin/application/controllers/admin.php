@@ -120,10 +120,10 @@ class admin extends CI_Controller
             "news_img_url" => "home/" . $_FILES['userfile']['name'] = $files['userfile']['name'][1],
             "news_two_title" => $news2_title,
             "news_two_text" => $news2_text,
-            "news_two_img_url" => "home/" . $_FILES['userfile']['name'] = $files['userfile']['name'][1],
+            "news_two_img_url" => "home/" . $_FILES['userfile']['name'] = $files['userfile']['name'][2],
             "news_three_title" => $news3_title,
             "news_three_text" => $news3_text,
-            "news_three_img_url" => "home/" . $_FILES['userfile']['name'] = $files['userfile']['name'][2],
+            "news_three_img_url" => "home/" . $_FILES['userfile']['name'] = $files['userfile']['name'][3],
             "description" => $description,
             "description_text" => $description_text
         );
