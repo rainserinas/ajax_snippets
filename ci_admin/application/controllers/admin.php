@@ -41,7 +41,7 @@ class admin extends CI_Controller
 
                 if ($login_credentials['status'] == 1) {
                     $this->session->set_userdata("session_id", $login_credentials['id']);
-                    redirect('http://127.0.0.1/ci_admin/admin');
+                    redirect('http://localhost/ci_admin/admin');
                 }
             }
         } else {
@@ -52,7 +52,7 @@ class admin extends CI_Controller
     public function logout()
     {
         $this->session->unset_userdata('session_id');
-        redirect('http://127.0.0.1/ci_admin/admin');
+        redirect('http://localhost/ci_admin/admin');
     }
 
     public function about()
@@ -138,7 +138,9 @@ class admin extends CI_Controller
         $result = $this->Dat->update($id, $data, $table);
 
         if ($result == true) {
+            $this->load->view('template_up');
             $this->load->view('admin/dashboard');
+            $this->load->view('template_down');
         } else {
             echo "Edit failed";
         }

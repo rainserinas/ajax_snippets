@@ -78,7 +78,7 @@
     </style>
 </head>
 <body>
-<form action="http://127.0.0.1/ci_admin/admin/login" method="post">
+<form action="http://localhost/ci_admin/admin/login" method="post">
     <legend>Journeytech Inc.</legend>
     <input name="username" type="text" placeholder="Enter Username" required/>
     <input name="password" type="password" placeholder="Enter Password" required/>
