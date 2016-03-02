@@ -4,10 +4,10 @@
     <title>Journeytech Inc.</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/home/home.css') ?>">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url('assets/js/jquery.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
     <script src="<?php echo base_url('assets/home/home.js'); ?>"></script>
 
 </head>
@@ -25,7 +25,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav pull-right">
-                <li><a href="#">Home</a></li>
+                <li><a href="#company-logo">Home</a></li>
                 <li><a href="#about-div">About Us</a></li>
                 <li><a href="#pas-div">Products and Services</a></li>
                 <li><a href="#careers-div">Careers</a></li>
@@ -35,7 +35,7 @@
     </div>
 </nav>
 
-<div class="row" style="margin-top: 51px;">
+<div id="company-logo" class="row" style="margin-top: 51px;">
     <div class="col-sm-8" id="heading_img_url">
         <!--Img will be on fetch data via ajax-->
     </div>
@@ -91,7 +91,7 @@
     </div>
 </div>
 
-<div id="pas-div">
+<div id="pas-div" style="background-image: url('<?php echo base_url('uploads/products and services bg.png'); ?>')">
     <!--Img will be on fetch data via ajax-->
 </div>
 
@@ -108,7 +108,6 @@
 <div id="clients-div">
     <!--Img will be on fetch data via ajax-->
 </div>
-
 
 
 <!-- Footer -->

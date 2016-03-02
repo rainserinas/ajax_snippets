@@ -1,5 +1,8 @@
 <div class="container-fluid">
 
+    <div style="text-align: center;">
+        <h1>Careers</h1>
+    </div>
 
     <form action="http://127.0.0.1/ci_admin/admin/careers_upload" enctype="multipart/form-data" method="post" accept-charset="utf-8">
 
@@ -13,5 +16,21 @@
         </div>
     </form>
 
+    <table class="table table-striped">
+        <thead>
+        <th>Image name</th>
+        <th>Tools</th>
+        </thead>
+        <tbody>
+        <?php
+        foreach ($careers as $data) {
+            echo "<tr>";
+            echo "<td>" . str_replace("careers/", "", $data['career_img_url']) . "</td>";
+            echo "<td><a href='" . base_url('admin/deactivate') . "/" . $data['id'] . "/" . "careers" . "' class='btn btn-danger'>Deactivate</a></td>";
+            echo "</tr>";
+        }
+        ?>
+        </tbody>
+    </table>
 
 </div>

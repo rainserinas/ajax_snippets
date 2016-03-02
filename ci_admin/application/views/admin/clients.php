@@ -1,5 +1,8 @@
 <div class="container-fluid">
 
+    <div style="text-align: center;">
+        <h1>Clients</h1>
+    </div>
 
     <form action="http://127.0.0.1/ci_admin/admin/clients_upload" enctype="multipart/form-data" method="post"
           accept-charset="utf-8">

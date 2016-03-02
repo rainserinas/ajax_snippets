@@ -41,7 +41,9 @@ class admin extends CI_Controller
 
                 if ($login_credentials['status'] == 1) {
                     $this->session->set_userdata("session_id", $login_credentials['id']);
-                    redirect('http://localhost/ci_admin/admin');
+                    $this->session->set_userdata("session_user", $login_credentials['username']);
+                    redirect(base_url('admin'));
+
                 }
             }
         } else {
@@ -52,7 +54,7 @@ class admin extends CI_Controller
     public function logout()
     {
         $this->session->unset_userdata('session_id');
-        redirect('http://localhost/ci_admin/admin');
+        redirect(base_url('admin'));
     }
 
     public function about()
@@ -64,15 +66,32 @@ class admin extends CI_Controller
 
     public function pas()
     {
+
+        $data = array(
+            "status" => "1"
+        );
+
+        $table = "pas_tbl";
+
+        $result['pas'] = $this->Dat->select_where($table, $data);
+
         $this->load->view('template_up');
-        $this->load->view('admin/pas');
+        $this->load->view('admin/pas', $result);
         $this->load->view('template_down');
     }
 
     public function careers()
     {
+        $data = array(
+            "status" => "1"
+        );
+
+        $table = "careers_tbl";
+
+        $result['careers'] = $this->Dat->select_where($table, $data);
+
         $this->load->view('template_up');
-        $this->load->view('admin/careers');
+        $this->load->view('admin/careers', $result);
         $this->load->view('template_down');
     }
 
@@ -351,6 +370,34 @@ class admin extends CI_Controller
         $config['overwrite'] = FALSE;
 
         return $config;
+    }
+
+    public function deactivate($id, $type)
+    {
+
+        if ($type == "pas") {
+            $data = array(
+                "status" => "0"
+            );
+            $table = "pas_tbl";
+
+            $result = $this->Dat->update($id, $data, $table);
+
+            if ($result == true) {
+                redirect(base_url('admin/pas'));
+            }
+
+        } else if ($type == "careers") {
+            $data = array(
+                "status" => "0"
+            );
+
+            $table = "careers_tbl";
+
+            $result = $this->Dat->update($id, $data, $table);
+            redirect(base_url('admin/careers'));
+        }
+
     }
 
 }
