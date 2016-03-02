@@ -375,29 +375,52 @@ class admin extends CI_Controller
     public function deactivate($id, $type)
     {
 
-        if ($type == "pas") {
-            $data = array(
-                "status" => "0"
-            );
-            $table = "pas_tbl";
+        switch ($type) {
+            case "pas":
+                $data = array(
+                    "status" => "0"
+                );
+                $table = "pas_tbl";
+                $result = $this->Dat->update($id, $data, $table);
 
-            $result = $this->Dat->update($id, $data, $table);
-
-            if ($result == true) {
-                redirect(base_url('admin/pas'));
-            }
-
-        } else if ($type == "careers") {
-            $data = array(
-                "status" => "0"
-            );
-
-            $table = "careers_tbl";
-
-            $result = $this->Dat->update($id, $data, $table);
-            redirect(base_url('admin/careers'));
+                if ($result == true) {
+                    redirect(base_url('admin/pas'));
+                }
+                break;
+            case "careers":
+                $data = array(
+                    "status" => "0"
+                );
+                $table = "careers_tbl";
+                $result = $this->Dat->update($id, $data, $table);
+                redirect(base_url('admin/careers'));
+                break;
+            default:
+                echo "Nothing happened";
         }
 
     }
+
+    public function send_email()
+    {
+
+        $email = $this->input->post('email');
+        $message = $this->input->post('message');
+
+        $post = array(
+            'email' => $email,
+            'message' => $message
+        );
+
+        $ch = curl_init('http://mark.journeytech.com.ph/send_mail/send_email.php');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+        $response = curl_exec($ch);
+
+        if ($response) {
+            redirect(base_url());
+        }
+    }
+
 
 }

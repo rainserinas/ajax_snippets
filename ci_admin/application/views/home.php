@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/home/home.css') ?>">
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
     <script src="<?php echo base_url('assets/js/jquery.js'); ?>"></script>
     <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
     <script src="<?php echo base_url('assets/home/home.js'); ?>"></script>
+
 
 </head>
 <body onload="onload()">
@@ -107,6 +109,31 @@
 
 <div id="clients-div">
     <!--Img will be on fetch data via ajax-->
+</div>
+
+<div id="emaildiv">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <form action="<?php echo base_url('admin/send_email'); ?>" method="post">
+                    <h2 style="text-align: center;">We'd like to here from you!</h2>
+                    <label>Email address:</label>
+                    <input class="form-control" type="text" name="email" required/>
+                    <label>Message:</label>
+                    <textarea class="form-control" type="text" name="message"></textarea>
+
+                    <div style="margin-top: 5px; text-align: center; margin-bottom: 5px;">
+                        <input type="submit" value="Submit" class="btn btn-info">
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-6">
+                <div id="googleMap" style="width:110%;height:380px;"></div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 
