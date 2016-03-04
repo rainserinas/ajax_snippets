@@ -113,27 +113,43 @@
 
 <div id="emaildiv">
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-6">
-                <form action="<?php echo base_url('admin/send_email'); ?>" method="post">
-                    <h2 style="text-align: center;">We'd like to here from you!</h2>
-                    <label>Email address:</label>
-                    <input class="form-control" type="text" name="email" required/>
-                    <label>Message:</label>
-                    <textarea class="form-control" type="text" name="message"></textarea>
+    <div class="container-fluid" style="width:50%;">
 
-                    <div style="margin-top: 5px; text-align: center; margin-bottom: 5px;">
-                        <input type="submit" value="Submit" class="btn btn-info">
-                    </div>
-                </form>
-            </div>
-            <div class="col-sm-6">
-                <div id="googleMap" style="width:110%;height:380px;"></div>
-            </div>
-        </div>
+        <form id="contact" action="" method="post">
+            <h3>Get In Touch with us today</h3>
+            <h4>Contact us for more information about our products.</h4>
+
+            <fieldset>
+                <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Your Email Address" type="email" tabindex="2" required>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Your Phone Number" type="tel" tabindex="3" required>
+            </fieldset>
+
+            <fieldset>
+                <textarea placeholder="Type your Message Here...." tabindex="5" required></textarea>
+            </fieldset>
+            <fieldset>
+                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+            </fieldset>
+        </form>
+
+
     </div>
 
+</div>
+
+<div class="container-fluid">
+    <hr>
+
+    <h1 style="text-align: center; font-weight: bold; color:#0066ff; font-size: 30px;">ON THE MAP</h1>
+
+    <center>
+        <div id="googleMap" style="width:70%;height:380px; margin-bottom: 20px;"></div>
+    </center>
 </div>
 
 

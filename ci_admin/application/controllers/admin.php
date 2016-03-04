@@ -14,7 +14,12 @@ class admin extends CI_Controller
     {
 
         if ($this->session->userdata("session_id") != "" || $this->session->userdata("session_id") != null) {
-            $this->load->view('template_up');
+
+            $table = "pageview_tbl";
+
+            $count['pageview'] = $this->Dat->getAll($table);
+
+            $this->load->view('template_up', $count);
             $this->load->view('admin/dashboard');
             $this->load->view('template_down');
         } else {
@@ -420,6 +425,16 @@ class admin extends CI_Controller
         if ($response) {
             redirect(base_url());
         }
+    }
+
+    public function reset_counter($id)
+    {
+        $data = array(
+            "page_count"=>"0"
+        );
+        $table = "pageview_tbl";
+        $reset = $this->Dat->update($id,$data,$table);
+        redirect(base_url('admin'));
     }
 
 
