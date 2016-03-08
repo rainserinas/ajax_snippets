@@ -11,3 +11,15 @@ git remote rm origin  https://github.com/user/repo.git
 git add --all
 git commit -m 'commit message'
 git push -u origin master
+
+========================================================
+
+--to set branch and add to origin/master
+git checkout {branch-name}
+
+--to pull to branch
+git pull origin {branch-name}
+
+--to push to branch
+git push --set-upstream origin {branch-name}
+
