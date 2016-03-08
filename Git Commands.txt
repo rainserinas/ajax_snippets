@@ -23,3 +23,8 @@ git pull origin {branch-name}
 --to push to branch
 git push --set-upstream origin {branch-name}
 
+--to merge
+git checkout master (will point back to master)
+git merge {branch-name}
+git push --set-upstream origin master
+
