@@ -24,7 +24,13 @@ git pull origin {branch-name}
 git push --set-upstream origin {branch-name}
 
 --to merge
+git checkout master
+git pull
+git checkout {branch-name}
+git log master (just to display logs)
+git merge origin/{branch-name}
+
 git checkout master (will point back to master)
 git merge {branch-name}
-git push --set-upstream origin master
+git push (or git push --set-upstream origin master)
 
