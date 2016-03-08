@@ -64,7 +64,10 @@ class admin extends CI_Controller
 
     public function about()
     {
-        $this->load->view('template_up');
+        $table = "pageview_tbl";
+
+        $count['pageview'] = $this->Dat->getAll($table);
+        $this->load->view('template_up',$count);
         $this->load->view('admin/about');
         $this->load->view('template_down');
     }
@@ -80,7 +83,11 @@ class admin extends CI_Controller
 
         $result['pas'] = $this->Dat->select_where($table, $data);
 
-        $this->load->view('template_up');
+        $table = "pageview_tbl";
+
+        $count['pageview'] = $this->Dat->getAll($table);
+
+        $this->load->view('template_up',$count);
         $this->load->view('admin/pas', $result);
         $this->load->view('template_down');
     }
@@ -95,14 +102,21 @@ class admin extends CI_Controller
 
         $result['careers'] = $this->Dat->select_where($table, $data);
 
-        $this->load->view('template_up');
+        $table = "pageview_tbl";
+
+        $count['pageview'] = $this->Dat->getAll($table);
+
+        $this->load->view('template_up',$count);
         $this->load->view('admin/careers', $result);
         $this->load->view('template_down');
     }
 
     public function clients()
     {
-        $this->load->view('template_up');
+        $table = "pageview_tbl";
+
+        $count['pageview'] = $this->Dat->getAll($table);
+        $this->load->view('template_up',$count);
         $this->load->view('admin/clients');
         $this->load->view('template_down');
     }
@@ -162,7 +176,12 @@ class admin extends CI_Controller
         $result = $this->Dat->update($id, $data, $table);
 
         if ($result == true) {
-            $this->load->view('template_up');
+
+            $table = "pageview_tbl";
+
+            $count['pageview'] = $this->Dat->getAll($table);
+
+            $this->load->view('template_up',$count);
             $this->load->view('admin/dashboard');
             $this->load->view('template_down');
         } else {
@@ -270,7 +289,11 @@ class admin extends CI_Controller
 
         $result = $this->Dat->insert($table, $data);
 
-        $this->load->view('template_up');
+        $table = "pageview_tbl";
+
+        $count['pageview'] = $this->Dat->getAll($table);
+
+        $this->load->view('template_up',$count);
         $this->load->view('admin/pas');
         $this->load->view('template_down');
     }
@@ -316,7 +339,11 @@ class admin extends CI_Controller
 
         $result = $this->Dat->insert($table, $data);
 
-        $this->load->view('template_up');
+        $table = "pageview_tbl";
+
+        $count['pageview'] = $this->Dat->getAll($table);
+
+        $this->load->view('template_up',$count);
         $this->load->view('admin/careers');
         $this->load->view('template_down');
     }
@@ -359,7 +386,11 @@ class admin extends CI_Controller
 
         $result = $this->Dat->insert($table, $data);
 
-        $this->load->view('template_up');
+        $table = "pageview_tbl";
+
+        $count['pageview'] = $this->Dat->getAll($table);
+
+        $this->load->view('template_up',$count);
         $this->load->view('admin/clients');
         $this->load->view('template_down');
     }
@@ -409,11 +440,15 @@ class admin extends CI_Controller
     public function send_email()
     {
 
+        $name = $this->input->post('name');
         $email = $this->input->post('email');
+        $contact = $this->input->post('contact_num');
         $message = $this->input->post('message');
 
         $post = array(
+            'name' => $name,
             'email' => $email,
+            'contact' => $contact,
             'message' => $message
         );
 
@@ -430,10 +465,10 @@ class admin extends CI_Controller
     public function reset_counter($id)
     {
         $data = array(
-            "page_count"=>"0"
+            "page_count" => "0"
         );
         $table = "pageview_tbl";
-        $reset = $this->Dat->update($id,$data,$table);
+        $reset = $this->Dat->update($id, $data, $table);
         redirect(base_url('admin'));
     }
 

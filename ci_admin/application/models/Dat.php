@@ -11,6 +11,7 @@ class Dat extends CI_Model
     */
     public function getAll($table)
     {
+        $this->db->cache_on();
         return $this->db->get($table)->result_array();
     }
 
@@ -80,6 +81,7 @@ class Dat extends CI_Model
 
     public function update($id, $data, $table)
     {
+        $this->db->cache_on();
         $this->db->where('id', $id);
         $this->db->update($table, $data);
         return true;
