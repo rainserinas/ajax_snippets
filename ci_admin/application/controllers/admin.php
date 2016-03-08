@@ -67,7 +67,7 @@ class admin extends CI_Controller
         $table = "pageview_tbl";
 
         $count['pageview'] = $this->Dat->getAll($table);
-        $this->load->view('template_up',$count);
+        $this->load->view('template_up', $count);
         $this->load->view('admin/about');
         $this->load->view('template_down');
     }
@@ -87,7 +87,7 @@ class admin extends CI_Controller
 
         $count['pageview'] = $this->Dat->getAll($table);
 
-        $this->load->view('template_up',$count);
+        $this->load->view('template_up', $count);
         $this->load->view('admin/pas', $result);
         $this->load->view('template_down');
     }
@@ -106,7 +106,7 @@ class admin extends CI_Controller
 
         $count['pageview'] = $this->Dat->getAll($table);
 
-        $this->load->view('template_up',$count);
+        $this->load->view('template_up', $count);
         $this->load->view('admin/careers', $result);
         $this->load->view('template_down');
     }
@@ -116,10 +116,24 @@ class admin extends CI_Controller
         $table = "pageview_tbl";
 
         $count['pageview'] = $this->Dat->getAll($table);
-        $this->load->view('template_up',$count);
+        $this->load->view('template_up', $count);
         $this->load->view('admin/clients');
         $this->load->view('template_down');
     }
+
+    //Test for textarea editor
+    public function texteditor()
+    {
+        $this->load->view('admin/editor');
+    }
+
+    public function editor_submit()
+    {
+        $text = $this->input->post('tarea');
+        echo $text;
+    }
+
+    //Test for textarea editor
 
     public function home_upload()
     {
@@ -181,7 +195,7 @@ class admin extends CI_Controller
 
             $count['pageview'] = $this->Dat->getAll($table);
 
-            $this->load->view('template_up',$count);
+            $this->load->view('template_up', $count);
             $this->load->view('admin/dashboard');
             $this->load->view('template_down');
         } else {
@@ -293,7 +307,7 @@ class admin extends CI_Controller
 
         $count['pageview'] = $this->Dat->getAll($table);
 
-        $this->load->view('template_up',$count);
+        $this->load->view('template_up', $count);
         $this->load->view('admin/pas');
         $this->load->view('template_down');
     }
@@ -343,7 +357,7 @@ class admin extends CI_Controller
 
         $count['pageview'] = $this->Dat->getAll($table);
 
-        $this->load->view('template_up',$count);
+        $this->load->view('template_up', $count);
         $this->load->view('admin/careers');
         $this->load->view('template_down');
     }
@@ -390,7 +404,7 @@ class admin extends CI_Controller
 
         $count['pageview'] = $this->Dat->getAll($table);
 
-        $this->load->view('template_up',$count);
+        $this->load->view('template_up', $count);
         $this->load->view('admin/clients');
         $this->load->view('template_down');
     }
