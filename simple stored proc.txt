@@ -1,0 +1,28 @@
+/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT *
+  FROM [Mark_Passive].[dbo].[GPRSIN] where smsdt between '2015-04-10 00:00:00' and '2015-04-16 23:59:59'
+order by smsdt desc
+ 
+ 
+ 
+                                INSERT into valuecheck (server) values(‘passive’)
+              INSERT INTO [192.168.3.111].[MARK_TEST].[dbo].[GPRSIN] (smsfr,smsmsg,smsdt,dbdt,devid,status,status2,IsHEX)
+SELECT smsfr,smsmsg,smsdt,dbdt,devid,status,status2,IsHEX
+FROM [192.168.3.141].[Mark_Active].[dbo].[GPRSIN] cr
+WHERE
+NOT EXISTS (SELECT  id,smsfr,smsmsg,smsdt,dbdt,devid,status,status2,IsHEX FROM [192.168.3.111].[MARK_TEST].[dbo].[GPRSIN]  c
+          WHERE cr.smsdt = c.smsdt) and cr.smsdt between '2015-04-10 00:00:00' and '2015-04-16 23:59:59'
+ 
+ 
+Between ‘’ and ‘’
+ 
+ 
+ 
+              INSERT INTO [192.168.3.111].[MARK_TEST].[dbo].[GPRSIN] (smsfr,smsmsg,smsdt,dbdt,devid,status,status2,IsHEX)
+SELECT smsfr,smsmsg,smsdt,dbdt,devid,status,status2,IsHEX
+FROM [192.168.3.141].[Mark_Active_DW].[dbo].[GPRSIN] cr
+WHERE
+NOT EXISTS (SELECT  id,smsfr,smsmsg,smsdt,dbdt,devid,status,status2,IsHEX FROM [192.168.3.111].[MARK_TEST].[dbo].[GPRSIN]  c
+          WHERE cr.smsdt = c.smsdt) and cr.smsdt between '2015-04-10 00:00:00' and '2015-04-16 23:59:59'
+ 
+ 

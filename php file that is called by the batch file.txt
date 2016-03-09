@@ -1,0 +1,23 @@
+<?php
+/*require "core/init.php";
+$result = mssql_query($connection,
+     "CALL CLEAN_RAW_DATA_STRING_PROC") or die("Query fail: " . mssql_error());*/
+ 
+ 
+ 
+$conn = mssql_connect('192.168.3.111', 'sa', 'str0ngp@ssw0rd');
+mssql_select_db('SMSGPS', $conn);
+// Call a simple query
+//$result = mssql_query('SELECT TOP 1 smsmsg FROM GPRSIN', $conn);
+ 
+// Release the result resource/
+//mssql_free_result($result);
+ 
+// Then execute the procedure
+$proc = mssql_init('CROSSBROWSER_DATA_REPLICATION_DW', $conn);
+$proc_result = mssql_execute($proc);
+echo "1 data moved";
+// Etc...
+mssql_free_statement($proc);
+ 
+?>

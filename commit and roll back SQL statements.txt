@@ -1,0 +1,20 @@
+You can turn autocommit ON by setting implicit_transactions OFF:
+
+SET IMPLICIT_TRANSACTIONS OFF
+When the setting is ON, it returns to implicit transaction mode. In implicit transaction mode, every change you make starts a transactions which you have to commit manually.
+
+Maybe an example is clearer. This will write a change to the database:
+
+SET IMPLICIT_TRANSACTIONS ON
+UPDATE MyTable SET MyField = 1 WHERE MyId = 1
+COMMIT TRANSACTION
+This will not write a change to the database:
+
+SET IMPLICIT_TRANSACTIONS ON
+UPDATE MyTable SET MyField = 1 WHERE MyId = 1
+ROLLBACK TRANSACTION
+The following example will update a row, and then complain that there's no transaction to commit:
+
+SET IMPLICIT_TRANSACTIONS OFF
+UPDATE MyTable SET MyField = 1 WHERE MyId = 1
+ROLLBACK TRANSACTION

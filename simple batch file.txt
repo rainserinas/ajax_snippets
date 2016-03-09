@@ -1,0 +1,14 @@
+@echo off
+rem To run this file first add php.exe
+rem to path in environment variables
+rem nameofyourex
+ 
+rem adds php to path. mark as remark if php already exists
+rem path %path%;d:\xampp\php
+path %path%;D:\xampp\php\
+ 
+:repeat
+  TIMEOUT 1
+                php KmRunProcessor_new.php
+                goto repeat
+                pause

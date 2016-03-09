@@ -1,0 +1,37 @@
+USE [MARK_TEST]
+GO
+/****** Object:  Trigger [dbo].[Parser_Trigger]    Script Date: 4/17/2015 3:22:28 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ 
+ALTER TRIGGER [dbo].[Parser_Trigger]
+     ON [dbo].[GPRSIN_TEMP]
+     AFTER INSERT
+     AS BEGIN
+           DECLARE @smsmsg varchar(MAX);
+              DECLARE @det varchar(5);
+              DECLARE @strleng int;
+              DECLARE @smsdt DATETIME;
+              DECLARE @id INT;
+ 
+ 
+              SET @smsmsg  = (SELECT top 1 smsmsg FROM GPRSIN_TEMP where isHex is NULL or isHex ='0');
+              SET @id      = (SELECT id FROM GPRSIN_TEMP where smsmsg = @smsmsg);
+              SET @smsdt   = (SELECT SMSDT FROM GPRSIN_TEMP where SMSMSG = @smsmsg AND id = @id);
+              SET @det     = (SELECT SUBSTRING(@smsmsg, 17, 3));
+              SET @strleng = (SELECT LEN (@smsmsg));
+ 
+              IF (@strleng > '80' AND @strleng < '100') and (@det = '241' OR @det = '740')
+                     BEGIN
+                     EXEC ParsingProcedureRX_80_and_up_characters @message = @smsmsg, @datestamp = @smsdt;
+                     END
+              IF (@strleng > '130') and (@det = '241' OR @det = '740')
+                     BEGIN
+                     EXEC ParsingProcedureRX_130_and_up_characters @message = @smsmsg, @datestamp = @smsdt;
+                     END
+       END
+ 
+ 
+ 
