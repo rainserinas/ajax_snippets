@@ -113,11 +113,18 @@ class admin extends CI_Controller
 
     public function clients()
     {
-        $table = "pageview_tbl";
 
+        $table = "pageview_tbl";
         $count['pageview'] = $this->Dat->getAll($table);
+
+        $data = array(
+            "status" => "1"
+        );
+        $data_table = "clients_tbl";
+        $result['clients'] = $this->Dat->select_where($data_table, $data);
+
         $this->load->view('template_up', $count);
-        $this->load->view('admin/clients');
+        $this->load->view('admin/clients', $result);
         $this->load->view('template_down');
     }
 
@@ -444,6 +451,14 @@ class admin extends CI_Controller
                 $table = "careers_tbl";
                 $result = $this->Dat->update($id, $data, $table);
                 redirect(base_url('admin/careers'));
+                break;
+            case "clients":
+                $data = array(
+                    "status" => "0"
+                );
+                $table = "clients_tbl";
+                $result = $this->Dat->update($id, $data, $table);
+                redirect(base_url('admin/clients'));
                 break;
             default:
                 echo "Nothing happened";

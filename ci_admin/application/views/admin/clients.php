@@ -15,5 +15,21 @@
         </div>
     </form>
 
+    <table class="table table-striped">
+        <thead>
+        <th>Image name</th>
+        <th>Tools</th>
+        </thead>
+        <tbody>
+        <?php
+        foreach ($clients as $data) {
+            echo "<tr>";
+            echo "<td>" . str_replace("clients/", "", $data['client_img_url']) . "</td>";
+            echo "<td><a href='" . base_url('admin/deactivate') . "/" . $data['id'] . "/" . "clients" . "' class='btn btn-danger'>Deactivate</a></td>";
+            echo "</tr>";
+        }
+        ?>
+        </tbody>
+    </table>
 
 </div>
