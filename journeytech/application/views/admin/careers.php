@@ -4,7 +4,7 @@
         <h1>Careers</h1>
     </div>
 
-    <form action="http://127.0.0.1/ci_admin/admin/careers_upload" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+    <form action="<?php echo base_url('admin/careers_upload'); ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8">
 
         <label>Career Image:</label>
         <input class="form-control" type="file" name="userfile[]" size="20"/>

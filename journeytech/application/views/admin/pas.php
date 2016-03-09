@@ -4,7 +4,7 @@
         <h1>Products and Services</h1>
     </div>
 
-    <form action="http://127.0.0.1/ci_admin/admin/pas_upload" enctype="multipart/form-data" method="post"
+    <form action="<?php echo base_url('admin/pas_upload'); ?>" enctype="multipart/form-data" method="post"
           accept-charset="utf-8">
 
         <label>Product Image:</label>

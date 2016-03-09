@@ -4,7 +4,7 @@
         <h1>Home</h1>
     </div>
 
-    <form action="http://localhost/ci_admin/admin/home_upload" enctype="multipart/form-data" method="post"
+    <form action="<?php echo base_url('admin/home_upload'); ?>" enctype="multipart/form-data" method="post"
           accept-charset="utf-8">
 
         <label>Heading Image:</label>

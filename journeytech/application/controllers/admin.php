@@ -314,8 +314,16 @@ class admin extends CI_Controller
 
         $count['pageview'] = $this->Dat->getAll($table);
 
+        $data = array(
+            "status" => "1"
+        );
+
+        $table = "pas_tbl";
+
+        $results['pas'] = $this->Dat->select_where($table, $data);
+
         $this->load->view('template_up', $count);
-        $this->load->view('admin/pas');
+        $this->load->view('admin/pas',$results);
         $this->load->view('template_down');
     }
 
@@ -364,8 +372,16 @@ class admin extends CI_Controller
 
         $count['pageview'] = $this->Dat->getAll($table);
 
+        $data = array(
+            "status" => "1"
+        );
+
+        $table = "careers_tbl";
+
+        $results['careers'] = $this->Dat->select_where($table, $data);
+
         $this->load->view('template_up', $count);
-        $this->load->view('admin/careers');
+        $this->load->view('admin/careers',$results);
         $this->load->view('template_down');
     }
 
@@ -411,8 +427,15 @@ class admin extends CI_Controller
 
         $count['pageview'] = $this->Dat->getAll($table);
 
+
+        $data = array(
+            "status" => "1"
+        );
+        $data_table = "clients_tbl";
+        $results['clients'] = $this->Dat->select_where($data_table, $data);
+
         $this->load->view('template_up', $count);
-        $this->load->view('admin/clients');
+        $this->load->view('admin/clients',$results);
         $this->load->view('template_down');
     }
 
