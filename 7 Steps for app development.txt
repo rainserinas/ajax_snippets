@@ -64,5 +64,7 @@ This article is designed to give you those vital steps to help you deliver a suc
 
     If you are building a web application, make sure you test it on lots of devices and browsers. A good browser testing tool is browserstack.
 
-    Use the hallway useability test to get 5 or 6 random people that pass by in the hallway and force them to try to use the code you just write. This will help you find most of your usability issues. 
+    Use the hallway useability test to get 5 or 6 random people that pass by in the hallway and force them to try to use the code you just write. This will help you find most of your usability issues.
+
+<Test Commit> 
 
