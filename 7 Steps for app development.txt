@@ -66,5 +66,5 @@ This article is designed to give you those vital steps to help you deliver a suc
 
     Use the hallway useability test to get 5 or 6 random people that pass by in the hallway and force them to try to use the code you just write. This will help you find most of your usability issues.
 
-<Test Commit> 
+<Test Commit 12345> 
 
