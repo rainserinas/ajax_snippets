@@ -27,7 +27,7 @@
 
 <div class="container" style="margin-top: 80px;">
 
-    <button class="btn btn-info pull-right" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus"></span> Add message</button>
+    <button class="btn btn-info pull-right" data-toggle="modal" data-target="#myModal" title="Press F2 for shortcut"><span class="glyphicon glyphicon-plus"></span> Add message</button>
 
     <table class="table table-striped">
         <thead>
@@ -97,6 +97,16 @@
 
 </div>
 
+<script>
+    $(document).ready(function(){
 
+        //Handle f2 button to call modal
+        window.onkeypress = function(e) {
+            if ((e.which || e.keyCode) == 113) {
+                $('#myModal').modal('show');
+            }
+        }
+    });
+</script>
 </body>
 </html>

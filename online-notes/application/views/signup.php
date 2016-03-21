@@ -12,8 +12,18 @@
     <?php if ($_GET['status'] == "1") { ?>
 
         <div class="alert alert-success">
-            <strong>Success!</strong> Signup successful
+            <strong>Success!</strong> Signup successful. Please wait while you are being redirected to the login
+            screen...
         </div>
+
+        <script>
+            $(document).ready(function () {
+                //Will redirect to login page after 5 seconds of successful registration
+                window.setTimeout(function () {
+                    location.href = "<?php echo base_url(); ?>";
+                }, 5000);
+            });
+        </script>
 
     <?php } else if ($_GET['status'] == "0") { ?>
 
