@@ -1,0 +1,65 @@
+loop on post
+
+if(have_posts()) :
+	
+	while(have_post()):
+		the_post();
+	endwhile;
+
+else :
+	echo "No Post";
+endif;
+
+
+=============
+
+the_title(); //loads post title
+
+the_content(); //loads content of post
+
+the_permalink(); // hyperlink to that post
+
+get_header();
+
+get_footer();
+
+bloginfo('charset') // on meta charset
+
+bloginfo('name') // name of the site
+bloginfo('description');
+
+wp_head(); for header.php
+
+
+language_attributes();
+
+body_class(); // for body tag
+
+
+home_url();
+
+wp_footer();
+
+
+
+
+functions.php
+	
+	wp_enqueue_style('style',get_stylesheet_uri());
+
+add_action('wp_enqueue_scripts','function name');
+
+wp_nav_menu(); 
+
+
+files
+	index.php
+	header.php
+	functions.php
+	footer.php
+	style.css
+
+
+
+
+
