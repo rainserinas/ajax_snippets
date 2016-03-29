@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <style>
+
+        body {
+            margin: 0px;
+        }
+
+        div.row {
+            clear: both;
+        }
+
+        div.column {
+            float: left;
+            width: 25%;
+            padding-top: 10px;
+        }
+
+        /* Remove margins and padding from the list, and add a black background color */
+        ul.topnav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        /* Float the list items side by side */
+        ul.topnav li {
+            float: left;
+        }
+
+        /* Style the links inside the list items */
+        ul.topnav li a {
+            display: inline-block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        /* Change background color of links on hover */
+        ul.topnav li a:hover {
+            background-color: #111;
+        }
+
+        /* Hide the list item that contains the link that should open and close the topnav on small screens */
+        ul.topnav li.icon {
+            display: none;
+        }
+
+        .menu-trigger {
+            display: none;
+        }
+
+        @media screen and (max-width: 851px) {
+            div.column {
+                width: 50%;
+            }
+        }
+
+        @media screen and (max-width: 470px) {
+
+            div.nav-div ul li {
+                float: none;
+            }
+
+            .menu-trigger {
+                display: block;
+            }
+
+            div.nav-expanded {
+                display: block;
+            }
+
+            div.nav-div {
+                display: none;
+            }
+
+        }
+
+        @media screen and (max-width: 366px) {
+            div.column {
+                width: 100%;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+<span class="menu-trigger">&#9776;</span>
+
+<div class="nav-div">
+    <ul class="topnav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+</div>
+
+
+<div class="row">
+    <div class="column one">
+        <img src="images/fb-logo.png">
+        <p>
+            is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+            dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+            type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged.
+        </p>
+    </div>
+
+    <div class="column two">
+        <img src="images/fb-logo.png">
+        <p>
+            is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+            dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+            type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged.
+        </p>
+    </div>
+
+    <div class="column three">
+        <img src="images/fb-logo.png">
+        <p>
+            is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+            dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+            type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged.
+        </p>
+    </div>
+
+    <div class="column four">
+        <img src="images/fb-logo.png">
+        <p>
+            is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+            dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+            type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged.
+        </p>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+
+        $(".menu-trigger").click(function () {
+
+            $(".nav-div").slideToggle(400, function () {
+                $(this).toggleClass("nav-expanded");
+
+            });
+
+        });
+
+    });
+</script>
+</body>
+</html>

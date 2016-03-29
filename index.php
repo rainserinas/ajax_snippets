@@ -32,7 +32,7 @@ if(have_posts()) :
 	else;
 		//fallback no content message here
 
-endif;
+endif; 
 
 
 ?>
