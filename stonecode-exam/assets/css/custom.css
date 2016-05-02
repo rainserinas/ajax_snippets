@@ -1,0 +1,48 @@
+.match {
+    display: none;
+    color: red;
+}
+
+.phonenum-add {
+    margin-top: 10px;
+}
+
+.date-alert {
+    display: none;
+    color: red;
+}
+
+.thumb-img-div img {
+    cursor: pointer;
+}
+
+.dataTables_wrapper {
+    margin-top: 10px;
+}
+
+.fancybox {
+    width: 300px;
+    display: none;
+}
+
+.submit-btn-div {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.fancybox2 {
+    display: none;
+}
+
+.form-div{
+    display:none;
+}
+
+.btn-div{
+    text-align: center;
+}
+
+.fancybox3{
+    display:none;
+}
+
