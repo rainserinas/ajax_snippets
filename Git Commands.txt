@@ -12,6 +12,14 @@ git add --all
 git commit -m 'commit message'
 git push -u origin master
 
+
+
+========================================================
+
+When switching accounts on github
+
+git remote set-url origin https://name:password@github.com/repo.git
+
 ========================================================
 
 --to set branch and add to origin/master
